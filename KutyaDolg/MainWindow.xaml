@@ -1,0 +1,48 @@
+﻿<Window x:Class="KutyaDolg.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KutyaDolg"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Kutyák száma:"/>
+        <Label x:Name="lbKutyakSzama" Grid.Row="0" Grid.Column="1" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Kutyák feltöltése fájlból:"></TextBlock>
+        <Button x:Name="btnKutyakFeltoltese" Grid.Row="1" Grid.Column="1" Click="btnKutyakFeltoltese_Click">Kutyák feltöltése</Button>
+
+        <!-- Kutya keresés fajta alapjáb (ComboBox)-->
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Kutya keresése fajta alapján:"></TextBlock>
+        <ComboBox x:Name="cbKutyaFajta" Grid.Row="2" Grid.Column="1" SelectionChanged="cbKutyaFajta_SelectionChanged" />
+        <ListBox x:Name="lbKutyak" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" />
+        
+        <!--Orvosnál régen járt kutyák-->
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Írja be hogy hány napnál régebben orvost nem látogatott kutyákra szeretne rákeresni:"></TextBlock>
+        <TextBox x:Name="tbOrvosnalRegenJart" Grid.Row="4" Grid.Column="1" TextChanged="tbOrvosnalRegenJart_TextChanged" />
+        <ListBox x:Name="lbOrvosnalRegenJart" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"  />
+
+        <!--Név statisztika, amely megjeleníti, hogy az egyes kutyanevekből hány egyedet tartunk nyilván.
+            Megjelentése ListBox/Label segítségével.-->
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="Kutya nevek statisztikája:"></TextBlock>
+        
+        
+    </Grid>
+</Window>
